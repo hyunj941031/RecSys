@@ -29,6 +29,9 @@
     $$HIT Rate=\frac{HIT users}{users}$$
 
 # Evaluation
+<img src = "https://user-images.githubusercontent.com/69951894/227232997-8c3369f1-f6d4-4e7d-8b5c-f1063a8dc875.png" width="50%" height="30%">
+<img src = "https://user-images.githubusercontent.com/69951894/227228788-8e189eeb-a316-422a-b753-69cc67b7e70b.png" width="50%" height="30%">
+<img src = "https://user-images.githubusercontent.com/69951894/227228853-d4665747-f192-440e-9ed6-a2a5c50f6d62.png" width="50%" height="30%">
 
 # Conclusion
     - Item Id를 유사도가 비슷한(의류의 종류, 가격, 색상, 계절옷, 브랜드 등) Item끼리 묶어서 Id를 재배열하면 더 좋은 성능을 발현할 수 있을 것으로 판단된다.
