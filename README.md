@@ -13,7 +13,8 @@
 #### Bert4Rec
     - Sequential model: 순서에 따른 연관성을 찾는 모델 (Transformer 기반 모델)
     - Training -> masking을 이용하여 이전,이후의 행동에 대한 학습 (+ noise 데이터를 만들어 모델이 오차에 잘 적응할 수 있게 조절)
-    
+<img src = "https://user-images.githubusercontent.com/69951894/228300866-9f82ba6c-625b-494f-952a-46736fb7f56e.png" width="70%" height="70%">
+
 # Evaluation Method
 - validation data : 가장 최근 3개의 item (전체 구매 개수가 3회 이하인 user data 삭제)
 1. NDCG@k (Normalized Discounted Cumulative Gain)
@@ -34,7 +35,9 @@
 <img src = "https://user-images.githubusercontent.com/69951894/227232997-8c3369f1-f6d4-4e7d-8b5c-f1063a8dc875.png" width="50%" height="30%">
 <img src = "https://user-images.githubusercontent.com/69951894/227228788-8e189eeb-a316-422a-b753-69cc67b7e70b.png" width="50%" height="30%">
 <img src = "https://user-images.githubusercontent.com/69951894/227228853-d4665747-f192-440e-9ed6-a2a5c50f6d62.png" width="50%" height="30%">
+<img src = "https://user-images.githubusercontent.com/69951894/228314238-dd91a8c9-a6ab-4795-9276-0e396f38d9bb.png" width="30%" height="10%">
 
+# Demonstration
 - 일부 구매자들에 대한 데이터로 예측한 예시
     - user 1
         - train data: 
@@ -80,13 +83,6 @@
     ![image](https://user-images.githubusercontent.com/69951894/227282175-6377df62-0b65-41de-80c4-84626fc35ec0.png)
 
     ### - 고찰
-        - 훈련 데이터에 여자 옷에 관련된 이력이 많이 있고 중간에 남성용 의류나 향수 등이 포함되었다.
-        - 여성이어도 남성용신발이나 티셔츠를 사입는 경우가 종종 있으며 데이터셋에도 드러났다.
-        - user1은 training data에서 여성의류를 구매했고 남성용 데오도란트를 구매한 것으로 보아 여성임이 짐작이 되며 validation data도 남성용이지만 신발이 2개 있기 때문에 여성이 남자 신발을 구매한 것으로 보인다.
-        - 이에 따라 모델을 통해 예측한 item들도 여성의류가 주를 이루며 비교적 잘 추천해주는 모습으로 보인다.
-        - user2는 training data에서 여성의류가 대부분이며 남성용 티와 신발이 소수 존재하는 것으로 보아 user1과 마찬가지로 여성 고객인 것으로 보인다.
-        - 추천 결과도 여성의류가 대부분이며 남성용 티와 악세서리가 포함되어있다.
-        - 하지만 validation data가 우연히 남성용 악세서리와 의류가 포함되어 성능평가지표를 낮게 만드는 원인이 된 것으로 판단된다.
         - 예시 데이터를 통해 성능이 낮게 나오는 원인을 분석해보았다.
             1. 검증 데이터가 특정 아이템으로 한정되어서 비슷한 아이템이 추천되어도 반영이 안됨 -> 비슷한 아이템끼리 따로 라벨링하여 성능평가에 활용하면 어느정도 반영할 수 있을 것으로 판단됨
             2. 구매 심리를 검증데이터(가장최근3회 구매이력)만으로 충분히 반영할 수 없음 -> 검증데이터를 더 늘림(장기적인 고려)
