@@ -1,6 +1,6 @@
 # RecSys
 
-본 Repository에는 추천시스템을 구현한 코드가 저장되어있습니다.
+본 Repository에는 Bert4Rec 알고리즘을 활용한 패션아이템 거래내역 데이터의 유저 추천시스템을 구현한 코드가 저장되어있습니다.
 
 # Used Data
 -  FashionCampus
